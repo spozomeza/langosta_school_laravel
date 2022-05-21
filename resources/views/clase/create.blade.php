@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Class
+    Create Clase
 @endsection
 
 @section('content')
@@ -13,13 +13,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Class</span>
+                        <span class="card-title">Create Clase</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('classes.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.clases.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('class.form')
+                            @include('clase.form')
 
                         </form>
                     </div>

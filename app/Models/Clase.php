@@ -5,23 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Class
+ * Class Clase
  *
- * @property $id_class
+ * @property $id
  * @property $id_teacher
  * @property $id_course
  * @property $id_schedule
  * @property $name
  * @property $color
+ * @property $created_at
+ * @property $updated_at
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Clase extends Model
 {
-
+    
     static $rules = [
-		'id_class' => 'required',
 		'id_teacher' => 'required',
 		'id_course' => 'required',
 		'id_schedule' => 'required',
@@ -36,7 +37,7 @@ class Clase extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_class','id_teacher','id_course','id_schedule','name','color'];
+    protected $fillable = ['id_teacher','id_course','id_schedule','name','color','created_at','updated_at'];
 
 
 

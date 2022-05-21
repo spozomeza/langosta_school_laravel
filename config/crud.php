@@ -51,8 +51,8 @@ return [
             'password',
             'email_verified_at',
             'remember_token',
-            'created_at',
-            'updated_at',
+       /*     'created_at',
+            'updated_at',*/
             'deleted_at',
         ],
     ],

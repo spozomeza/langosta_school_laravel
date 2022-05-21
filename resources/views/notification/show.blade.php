@@ -14,16 +14,12 @@
                             <span class="card-title">Show Notification</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('notifications.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.notifications.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Notification:</strong>
-                            {{ $notification->id_notification }}
-                        </div>
+
                         <div class="form-group">
                             <strong>Id Student:</strong>
                             {{ $notification->id_student }}
@@ -43,6 +39,14 @@
                         <div class="form-group">
                             <strong>Final Note:</strong>
                             {{ $notification->final_note }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Created At:</strong>
+                            {{ $notification->created_at }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Updated At:</strong>
+                            {{ $notification->updated_at }}
                         </div>
 
                     </div>

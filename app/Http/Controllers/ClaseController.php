@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Clase;
-use App\Models\Class;
 use Illuminate\Http\Request;
 
 /**
- * Class ClassController
+ * Class ClaseController
  * @package App\Http\Controllers
  */
-class ClassController extends Controller
+class ClaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,10 +18,10 @@ class ClassController extends Controller
      */
     public function index()
     {
-        $classes = Clase::paginate();
+        $clases = Clase::paginate();
 
-        return view('class.index', compact('classes'))
-            ->with('i', (request()->input('page', 1) - 1) * $classes->perPage());
+        return view('clase.index', compact('clases'))
+            ->with('i', (request()->input('page', 1) - 1) * $clases->perPage());
     }
 
     /**
@@ -32,8 +31,8 @@ class ClassController extends Controller
      */
     public function create()
     {
-        $class = new Clase();
-        return view('class.create', compact('class'));
+        $clase = new Clase();
+        return view('clase.create', compact('clase'));
     }
 
     /**
@@ -46,10 +45,10 @@ class ClassController extends Controller
     {
         request()->validate(Clase::$rules);
 
-        $class = Clase::create($request->all());
+        $clase = Clase::create($request->all());
 
-        return redirect()->route('classes.index')
-            ->with('success', 'Class created successfully.');
+        return redirect()->route('admin.clases.index')
+            ->with('success', 'Clase created successfully.');
     }
 
     /**
@@ -60,9 +59,9 @@ class ClassController extends Controller
      */
     public function show($id)
     {
-        $class = Clase::find($id);
+        $clase = Clase::find($id);
 
-        return view('class.show', compact('class'));
+        return view('clase.show', compact('clase'));
     }
 
     /**
@@ -73,26 +72,26 @@ class ClassController extends Controller
      */
     public function edit($id)
     {
-        $class = Clase::find($id);
+        $clase = Clase::find($id);
 
-        return view('class.edit', compact('class'));
+        return view('clase.edit', compact('clase'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Class $class
+     * @param  Clase $clase
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clase $class)
+    public function update(Request $request, Clase $clase)
     {
         request()->validate(Clase::$rules);
 
-        $class->update($request->all());
+        $clase->update($request->all());
 
-        return redirect()->route('classes.index')
-            ->with('success', 'Class updated successfully');
+        return redirect()->route('admin.clases.index')
+            ->with('success', 'Clase updated successfully');
     }
 
     /**
@@ -102,9 +101,9 @@ class ClassController extends Controller
      */
     public function destroy($id)
     {
-        $class = Clase::find($id)->delete();
+        $clase = Clase::find($id)->delete();
 
-        return redirect()->route('classes.index')
-            ->with('success', 'Class deleted successfully');
+        return redirect()->route('admin.clases.index')
+            ->with('success', 'Clase deleted successfully');
     }
 }

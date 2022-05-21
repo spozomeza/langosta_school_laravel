@@ -47,7 +47,7 @@ class ScheduleController extends Controller
 
         $schedule = Schedule::create($request->all());
 
-        return redirect()->route('schedules.index')
+        return redirect()->route('admin.schedules.index')
             ->with('success', 'Schedule created successfully.');
     }
 
@@ -90,7 +90,7 @@ class ScheduleController extends Controller
 
         $schedule->update($request->all());
 
-        return redirect()->route('schedules.index')
+        return redirect()->route('admin.schedules.index')
             ->with('success', 'Schedule updated successfully');
     }
 
@@ -103,7 +103,7 @@ class ScheduleController extends Controller
     {
         $schedule = Schedule::find($id)->delete();
 
-        return redirect()->route('schedules.index')
+        return redirect()->route('admin.schedules.index')
             ->with('success', 'Schedule deleted successfully');
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Schedule
  *
- * @property $id_schedule
+ * @property $id
  * @property $id_class
  * @property $time_start
  * @property $time_end
@@ -20,7 +20,6 @@ class Schedule extends Model
 {
     
     static $rules = [
-		'id_schedule' => 'required',
 		'id_class' => 'required',
 		'time_start' => 'required',
 		'time_end' => 'required',
@@ -34,7 +33,7 @@ class Schedule extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_schedule','id_class','time_start','time_end','day'];
+    protected $fillable = ['id_class','time_start','time_end','day'];
 
 
 

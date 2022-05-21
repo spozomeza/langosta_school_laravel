@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Class
+    Clase
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Class') }}
+                                {{ __('Clase') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('classes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('admin.clases.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,33 +35,35 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Class</th>
+
 										<th>Id Teacher</th>
 										<th>Id Course</th>
 										<th>Id Schedule</th>
 										<th>Name</th>
 										<th>Color</th>
+										<th>Created At</th>
+										<th>Updated At</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($classes as $class)
+                                    @foreach ($clases as $clase)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $class->id_class }}</td>
-											<td>{{ $class->id_teacher }}</td>
-											<td>{{ $class->id_course }}</td>
-											<td>{{ $class->id_schedule }}</td>
-											<td>{{ $class->name }}</td>
-											<td>{{ $class->color }}</td>
+
+											<td>{{ $clase->id_teacher }}</td>
+											<td>{{ $clase->id_course }}</td>
+											<td>{{ $clase->id_schedule }}</td>
+											<td>{{ $clase->name }}</td>
+											<td>{{ $clase->color }}</td>
+											<td>{{ $clase->created_at }}</td>
+											<td>{{ $clase->updated_at }}</td>
 
                                             <td>
-                                                <form action="{{ route('classes.destroy',$class->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('classes.show',$class->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('classes.edit',$class->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.clases.destroy',$clase->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.clases.show',$clase->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.clases.edit',$clase->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -74,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $classes->links() !!}
+                {!! $clases->links() !!}
             </div>
         </div>
     </div>

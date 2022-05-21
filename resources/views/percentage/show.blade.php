@@ -14,16 +14,12 @@
                             <span class="card-title">Show Percentage</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('percentages.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.percentages.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Percentage:</strong>
-                            {{ $percentage->id_percentage }}
-                        </div>
+
                         <div class="form-group">
                             <strong>Id Course:</strong>
                             {{ $percentage->id_course }}
@@ -39,6 +35,14 @@
                         <div class="form-group">
                             <strong>Exams:</strong>
                             {{ $percentage->exams }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Created At:</strong>
+                            {{ $percentage->created_at }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Updated At:</strong>
+                            {{ $percentage->updated_at }}
                         </div>
 
                     </div>

@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('works.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('admin.works.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,12 +35,13 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Work</th>
+
 										<th>Id Class</th>
 										<th>Id Student</th>
 										<th>Name</th>
 										<th>Mark</th>
+										<th>Created At</th>
+										<th>Updated At</th>
 
                                         <th></th>
                                     </tr>
@@ -49,17 +50,18 @@
                                     @foreach ($works as $work)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $work->id_work }}</td>
+
 											<td>{{ $work->id_class }}</td>
 											<td>{{ $work->id_student }}</td>
 											<td>{{ $work->name }}</td>
 											<td>{{ $work->mark }}</td>
+											<td>{{ $work->created_at }}</td>
+											<td>{{ $work->updated_at }}</td>
 
                                             <td>
-                                                <form action="{{ route('works.destroy',$work->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('works.show',$work->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('works.edit',$work->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.works.destroy',$work->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.works.show',$work->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.works.edit',$work->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

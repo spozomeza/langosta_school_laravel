@@ -47,7 +47,7 @@ class NotificationController extends Controller
 
         $notification = Notification::create($request->all());
 
-        return redirect()->route('notifications.index')
+        return redirect()->route('admin.notifications.index')
             ->with('success', 'Notification created successfully.');
     }
 
@@ -90,7 +90,7 @@ class NotificationController extends Controller
 
         $notification->update($request->all());
 
-        return redirect()->route('notifications.index')
+        return redirect()->route('admin.notifications.index')
             ->with('success', 'Notification updated successfully');
     }
 
@@ -103,7 +103,7 @@ class NotificationController extends Controller
     {
         $notification = Notification::find($id)->delete();
 
-        return redirect()->route('notifications.index')
+        return redirect()->route('admin.notifications.index')
             ->with('success', 'Notification deleted successfully');
     }
 }

@@ -16,7 +16,7 @@
                         <span class="card-title">Create Schedule</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('schedules.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.schedules.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('schedule.form')

@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Work
  *
- * @property $id_work
+ * @property $id
  * @property $id_class
  * @property $id_student
  * @property $name
  * @property $mark
+ * @property $created_at
+ * @property $updated_at
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -20,7 +22,6 @@ class Work extends Model
 {
     
     static $rules = [
-		'id_work' => 'required',
 		'id_class' => 'required',
 		'id_student' => 'required',
 		'name' => 'required',
@@ -34,7 +35,7 @@ class Work extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_work','id_class','id_student','name','mark'];
+    protected $fillable = ['id_class','id_student','name','mark','created_at','updated_at'];
 
 
 

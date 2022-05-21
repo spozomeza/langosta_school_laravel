@@ -47,7 +47,7 @@ class ExamController extends Controller
 
         $exam = Exam::create($request->all());
 
-        return redirect()->route('exams.index')
+        return redirect()->route('admin.exams.index')
             ->with('success', 'Exam created successfully.');
     }
 
@@ -90,7 +90,7 @@ class ExamController extends Controller
 
         $exam->update($request->all());
 
-        return redirect()->route('exams.index')
+        return redirect()->route('admin.exams.index')
             ->with('success', 'Exam updated successfully');
     }
 
@@ -103,7 +103,7 @@ class ExamController extends Controller
     {
         $exam = Exam::find($id)->delete();
 
-        return redirect()->route('exams.index')
+        return redirect()->route('admin.exams.index')
             ->with('success', 'Exam deleted successfully');
     }
 }

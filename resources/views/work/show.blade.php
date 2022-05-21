@@ -14,16 +14,12 @@
                             <span class="card-title">Show Work</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('works.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.works.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Work:</strong>
-                            {{ $work->id_work }}
-                        </div>
+
                         <div class="form-group">
                             <strong>Id Class:</strong>
                             {{ $work->id_class }}
@@ -39,6 +35,14 @@
                         <div class="form-group">
                             <strong>Mark:</strong>
                             {{ $work->mark }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Created At:</strong>
+                            {{ $work->created_at }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Updated At:</strong>
+                            {{ $work->updated_at }}
                         </div>
 
                     </div>

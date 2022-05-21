@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('percentages.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('admin.percentages.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,12 +35,13 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Percentage</th>
+
 										<th>Id Course</th>
 										<th>Id Class</th>
 										<th>Continuous Assessment</th>
 										<th>Exams</th>
+										<th>Created At</th>
+										<th>Updated At</th>
 
                                         <th></th>
                                     </tr>
@@ -49,17 +50,18 @@
                                     @foreach ($percentages as $percentage)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $percentage->id_percentage }}</td>
+
 											<td>{{ $percentage->id_course }}</td>
 											<td>{{ $percentage->id_class }}</td>
 											<td>{{ $percentage->continuous_assessment }}</td>
 											<td>{{ $percentage->exams }}</td>
+											<td>{{ $percentage->created_at }}</td>
+											<td>{{ $percentage->updated_at }}</td>
 
                                             <td>
-                                                <form action="{{ route('percentages.destroy',$percentage->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('percentages.show',$percentage->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('percentages.edit',$percentage->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.percentages.destroy',$percentage->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.percentages.show',$percentage->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.percentages.edit',$percentage->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('schedules.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('admin.schedules.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,8 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Schedule</th>
+
 										<th>Id Class</th>
 										<th>Time Start</th>
 										<th>Time End</th>
@@ -49,17 +48,16 @@
                                     @foreach ($schedules as $schedule)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $schedule->id_schedule }}</td>
+
 											<td>{{ $schedule->id_class }}</td>
 											<td>{{ $schedule->time_start }}</td>
 											<td>{{ $schedule->time_end }}</td>
 											<td>{{ $schedule->day }}</td>
 
                                             <td>
-                                                <form action="{{ route('schedules.destroy',$schedule->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('schedules.show',$schedule->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('schedules.edit',$schedule->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.schedules.destroy',$schedule->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.schedules.show',$schedule->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.schedules.edit',$schedule->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

@@ -16,7 +16,7 @@
                         <span class="card-title">Create Percentage</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('percentages.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.percentages.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('percentage.form')

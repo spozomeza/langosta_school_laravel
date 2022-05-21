@@ -28,6 +28,8 @@ Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
 Route::prefix('user')->name('user.')->group(function(){
 
     Route::middleware(['guest:web','PreventBackHistory'])->group(function(){
@@ -54,6 +56,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/check',[UserAdminController::class,'check'])->name('check');
 
 
+
+
     });
 
     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
@@ -72,14 +76,29 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/user/create',[UserController::class,'create'])->name('user.create');
         Route::post('/user/check',[UserController::class,'check'])->name('user.check');
 
-        //Course
-        Route::view('/course/register','course.create')->name('course.create');
-        Route::view('/course/form','course.form')->name('course.form');
-        Route::view('/course/edit','course.edit')->name('course.edit');
-        Route::view('/course/show','course.show')->name('course.show');
-        //Route::view('/course/index','course.index')->name('course.index');
-        Route::post('/course/store',[CourseController::class,'store'])->name('courses.store');
-        Route::post('/course/check',[CourseController::class,'check'])->name('courses.check');
+        //Courses
+        Route::resource('courses', App\Http\Controllers\CourseController::class);
+
+        //Enrollments
+        Route::resource('enrollments', App\Http\Controllers\EnrollmentController::class);
+
+        //Schedules
+        Route::resource('schedules', App\Http\Controllers\ScheduleController::class);
+
+        //Exams
+        Route::resource('exams', App\Http\Controllers\ExamController::class);
+
+        //Notifications
+        Route::resource('notifications', App\Http\Controllers\NotificationController::class);
+
+        //Clases
+        Route::resource('clases', App\Http\Controllers\ClaseController::class);
+
+        //Perceages
+        Route::resource('percentages', App\Http\Controllers\PercentageController::class);
+
+        //Works
+        Route::resource('works', App\Http\Controllers\WorkController::class);
 
     });
 

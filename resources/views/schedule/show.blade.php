@@ -14,16 +14,12 @@
                             <span class="card-title">Show Schedule</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('schedules.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.schedules.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Schedule:</strong>
-                            {{ $schedule->id_schedule }}
-                        </div>
+
                         <div class="form-group">
                             <strong>Id Class:</strong>
                             {{ $schedule->id_class }}

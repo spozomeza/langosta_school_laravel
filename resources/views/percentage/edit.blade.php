@@ -16,7 +16,7 @@
                         <span class="card-title">Update Percentage</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('percentages.update', $percentage->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.percentages.update', $percentage->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

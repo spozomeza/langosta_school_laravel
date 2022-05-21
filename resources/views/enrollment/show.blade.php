@@ -14,16 +14,12 @@
                             <span class="card-title">Show Enrollment</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('enrollments.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.enrollments.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Enrollment:</strong>
-                            {{ $enrollment->id_enrollment }}
-                        </div>
+
                         <div class="form-group">
                             <strong>Id Student:</strong>
                             {{ $enrollment->id_student }}
@@ -35,6 +31,14 @@
                         <div class="form-group">
                             <strong>Status:</strong>
                             {{ $enrollment->status }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Created At:</strong>
+                            {{ $enrollment->created_at }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Updated At:</strong>
+                            {{ $enrollment->updated_at }}
                         </div>
 
                     </div>

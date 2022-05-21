@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $class->name ?? 'Show Class' }}
+    {{ $clase->name ?? 'Show Clase' }}
 @endsection
 
 @section('content')
@@ -11,38 +11,42 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Class</span>
+                            <span class="card-title">Show Clase</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('classes.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.clases.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Class:</strong>
-                            {{ $class->id_class }}
-                        </div>
+
                         <div class="form-group">
                             <strong>Id Teacher:</strong>
-                            {{ $class->id_teacher }}
+                            {{ $clase->id_teacher }}
                         </div>
                         <div class="form-group">
                             <strong>Id Course:</strong>
-                            {{ $class->id_course }}
+                            {{ $clase->id_course }}
                         </div>
                         <div class="form-group">
                             <strong>Id Schedule:</strong>
-                            {{ $class->id_schedule }}
+                            {{ $clase->id_schedule }}
                         </div>
                         <div class="form-group">
                             <strong>Name:</strong>
-                            {{ $class->name }}
+                            {{ $clase->name }}
                         </div>
                         <div class="form-group">
                             <strong>Color:</strong>
-                            {{ $class->color }}
+                            {{ $clase->color }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Created At:</strong>
+                            {{ $clase->created_at }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Updated At:</strong>
+                            {{ $clase->updated_at }}
                         </div>
 
                     </div>

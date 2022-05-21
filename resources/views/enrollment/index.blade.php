@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('enrollments.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('admin.enrollments.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,11 +35,12 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Enrollment</th>
+
 										<th>Id Student</th>
 										<th>Id Course</th>
 										<th>Status</th>
+										<th>Created At</th>
+										<th>Updated At</th>
 
                                         <th></th>
                                     </tr>
@@ -48,16 +49,17 @@
                                     @foreach ($enrollments as $enrollment)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $enrollment->id_enrollment }}</td>
+
 											<td>{{ $enrollment->id_student }}</td>
 											<td>{{ $enrollment->id_course }}</td>
 											<td>{{ $enrollment->status }}</td>
+											<td>{{ $enrollment->created_at }}</td>
+											<td>{{ $enrollment->updated_at }}</td>
 
                                             <td>
-                                                <form action="{{ route('enrollments.destroy',$enrollment->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('enrollments.show',$enrollment->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('enrollments.edit',$enrollment->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.enrollments.destroy',$enrollment->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.enrollments.show',$enrollment->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.enrollments.edit',$enrollment->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

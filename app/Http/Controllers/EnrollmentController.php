@@ -47,7 +47,7 @@ class EnrollmentController extends Controller
 
         $enrollment = Enrollment::create($request->all());
 
-        return redirect()->route('enrollments.index')
+        return redirect()->route('admin.enrollments.index')
             ->with('success', 'Enrollment created successfully.');
     }
 
@@ -90,7 +90,7 @@ class EnrollmentController extends Controller
 
         $enrollment->update($request->all());
 
-        return redirect()->route('enrollments.index')
+        return redirect()->route('admin.enrollments.index')
             ->with('success', 'Enrollment updated successfully');
     }
 
@@ -103,7 +103,7 @@ class EnrollmentController extends Controller
     {
         $enrollment = Enrollment::find($id)->delete();
 
-        return redirect()->route('enrollments.index')
+        return redirect()->route('admin.enrollments.index')
             ->with('success', 'Enrollment deleted successfully');
     }
 }

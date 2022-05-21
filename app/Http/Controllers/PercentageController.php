@@ -47,7 +47,7 @@ class PercentageController extends Controller
 
         $percentage = Percentage::create($request->all());
 
-        return redirect()->route('percentages.index')
+        return redirect()->route('admin.percentages.index')
             ->with('success', 'Percentage created successfully.');
     }
 
@@ -90,7 +90,7 @@ class PercentageController extends Controller
 
         $percentage->update($request->all());
 
-        return redirect()->route('percentages.index')
+        return redirect()->route('admin.percentages.index')
             ->with('success', 'Percentage updated successfully');
     }
 
@@ -103,7 +103,7 @@ class PercentageController extends Controller
     {
         $percentage = Percentage::find($id)->delete();
 
-        return redirect()->route('percentages.index')
+        return redirect()->route('admin.percentages.index')
             ->with('success', 'Percentage deleted successfully');
     }
 }

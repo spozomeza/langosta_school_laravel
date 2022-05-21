@@ -14,16 +14,12 @@
                             <span class="card-title">Show Course</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('course.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.courses.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
 
-                        <div class="form-group">
-                            <strong>Id Course:</strong>
-                            {{ $course->id_course }}
-                        </div>
                         <div class="form-group">
                             <strong>Name:</strong>
                             {{ $course->name }}
@@ -39,6 +35,14 @@
                         <div class="form-group">
                             <strong>Date End:</strong>
                             {{ $course->date_end }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Updated At:</strong>
+                            {{ $course->updated_at }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Created At:</strong>
+                            {{ $course->created_at }}
                         </div>
                         <div class="form-group">
                             <strong>Active:</strong>

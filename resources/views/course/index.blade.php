@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('admin.course.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('admin.courses.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,11 +36,12 @@
                                     <tr>
                                         <th>No</th>
 
-										<th>Id Course</th>
 										<th>Name</th>
 										<th>Description</th>
 										<th>Date Start</th>
 										<th>Date End</th>
+										<th>Updated At</th>
+										<th>Created At</th>
 										<th>Active</th>
 
                                         <th></th>
@@ -51,17 +52,18 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-											<td>{{ $course->id_course }}</td>
 											<td>{{ $course->name }}</td>
 											<td>{{ $course->description }}</td>
 											<td>{{ $course->date_start }}</td>
 											<td>{{ $course->date_end }}</td>
+											<td>{{ $course->updated_at }}</td>
+											<td>{{ $course->created_at }}</td>
 											<td>{{ $course->active }}</td>
 
                                             <td>
-                                                <form action="{{ route('courses.destroy',$course->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('courses.show',$course->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('courses.edit',$course->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.courses.destroy',$course->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.courses.show',$course->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.courses.edit',$course->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
