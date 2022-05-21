@@ -1,42 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+@extends('layouts.basic-layout')
 
-</head>
-<body style="background-color:#c8d9e8 !important">
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 offset-md-4" style="margin-top: 45px">
-            <h4>Admin Login</h4><hr>
-            <form action="{{ route('admin.check') }}" method="post">
-                @if (Session::get('fail'))
-                    <div class="alert alert-danger">
-                        {{ Session::get('fail') }}
-                    </div>
-                @endif
-                @csrf
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
-                    <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+@section('content')
+
+<body>
+    <div class="container text-center">
+        <h1 class="mb-5 mt-5">Login Administrador</h1>
+
+        <h4 class="text-center mt-3">Si ya tienes una cuenta puedes iniciar sesión.</h4>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div id="tabla-formulario">
+
+                    <form action="{{ route('admin.check') }}" method="post">
+                        @if (Session::get('fail'))
+                            <div class="alert alert-danger">
+                                {{ Session::get('fail') }}
+                            </div>
+                        @endif
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="Correo electrónico" value="{{ old('email') }}">
+                            <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{ old('password') }}">
+                            <span class="text-danger">@error('password'){{ $message }}@enderror</span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="boton-sesion"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+                        </div>
+                    </form>
+
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
-                    <span class="text-danger">@error('password'){{ $message }}@enderror</span>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-            </form>
+            </div>
         </div>
+
     </div>
-</div>
-</body>
-</html>
+
+
+@endsection
