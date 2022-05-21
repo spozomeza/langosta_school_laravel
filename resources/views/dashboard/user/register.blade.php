@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-4 offset-md-4" style="margin-top: 45px;">
             <h4>Student Register</h4><hr>
-            <form action="{{ route('user.create') }}" method="post" autocomplete="off">
+            <form action="{{ route('admin.user.create') }}" method="post" autocomplete="off">
                 @if (Session::get('success'))
                     <div class="alert alert-success">
                         {{ Session::get('success') }}

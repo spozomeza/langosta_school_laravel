@@ -31,7 +31,7 @@
                     <button type="submit" class="boton-sesion"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
                 </div>
                 <br>
-                <a href="{{ route('user.register') }}">Registrarse</a>
+
             </form>
 
                 </div>

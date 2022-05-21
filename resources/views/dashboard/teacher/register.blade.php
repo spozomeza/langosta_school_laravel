@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-4 offset-md-4" style="margin-top: 45px;">
             <h4>Teachers Register</h4><hr>
-            <form action="{{ route('teacher.create') }}" method="post" autocomplete="off">
+            <form action="{{ route('admin.teacher.create') }}" method="post" autocomplete="off">
                 @if (Session::get('success'))
                     <div class="alert alert-success">
                         {{ Session::get('success') }}
@@ -68,7 +68,7 @@
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
                 <br>
-                <a href="{{ route('teacher.login') }}">I already have an account</a>
+
             </form>
         </div>
     </div>

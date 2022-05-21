@@ -31,7 +31,7 @@
                             <button type="submit" class="boton-sesion">Login</button>
                         </div>
                         <br>
-                        <a href="{{ route('teacher.register') }}">Registrarse</a>
+
                     </form>
 
                 </div>
