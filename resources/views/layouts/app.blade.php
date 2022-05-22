@@ -50,16 +50,37 @@
 
                         @else
                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-eye-fill"></i> Vistas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/admin"><i class="bi bi-house"></i> Inicio</a></li>
+                                    <li><a class="dropdown-item" href="/students"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
+                                    <li><a class="dropdown-item" href="/teachers"><i class="bi bi-briefcase-fill"></i> Profesores</a></li>
+                                    <li><a class="dropdown-item" href="/courses"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="/enrollments"><i class="bi bi-journal-text"></i> Matrículas</a></li>
+                                    <li><a class="dropdown-item" href="/schedules"><i class="bi bi-alarm-fill"></i> Horarios</a></li>
+                                    <li><a class="dropdown-item" href="/classes"><i class="bi bi-easel"></i> Clases</a></li>                            
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
+                                    
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-file-person"></i> Mi perfil</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                        <i class="bi bi-arrow-bar-left"></i>
+                                        {{ __('Cerrar sesión') }}
+                                    </a></li>
+                                </ul>
+
+
+                                    
+                                    
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
