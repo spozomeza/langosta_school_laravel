@@ -9,17 +9,17 @@
     <div class="row">
         <div class="col-md-4 mx-auto">
         <div class="grid-card">
-        <a href="user/login">
+        <a href="{{ route('user.login') }}">
             <div class="menu-admin-opt p-4">
                 <i class="bi bi-mortarboard-fill"></i> Estudiante
             </div>
         </a>
-        <a href="teacher/login">
+        <a href="{{ route('teacher.login') }}">
             <div class="menu-admin-opt p-4">
                 <i class="bi bi-mortarboard-fill"></i> Profesor
             </div>
         </a>
-        <a href="admin/login">
+        <a href="{{ route('admin.login') }}">
             <div class="menu-admin-opt p-4">
                 <i class="bi bi-terminal-fill"></i> Administrador
             </div>
