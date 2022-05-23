@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +24,7 @@
     <br />
 
     <div id="calendar"></div>
+    <a class="btn btn-sm btn-success" href="{{ route('user.edit',auth()->user()->id ) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
 
 </div>
 
@@ -148,10 +149,12 @@
 
 </script>
 
+<a class="btn btn-sm btn-success" href="{{ route('user.edit',auth()->user()->id ) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+
 
 @endsection
 
-<!-- 
+<!--
 </body>
 </html> -->
 

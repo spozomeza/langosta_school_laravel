@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Percentage
+    User
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Percentage') }}
+                                {{ __('User') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('admin.percentages.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('admin.users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,10 +36,13 @@
                                     <tr>
                                         <th>No</th>
 
-										<th>Id Course</th>
-										<th>Id Class</th>
-										<th>Continuous Assessment</th>
-										<th>Exams</th>
+										<th>Username</th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Nif</th>
+										<th>Surname</th>
+										<th>Telephone</th>
+										<th>Date Registered</th>
 										<th>Created At</th>
 										<th>Updated At</th>
 
@@ -47,22 +50,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($percentages as $percentage)
+                                    @foreach ($users as $user)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-											<td>{{ $percentage->id_course }}</td>
-											<td>{{ $percentage->id_class }}</td>
-											<td>{{ $percentage->continuous_assessment }}</td>
-											<td>{{ $percentage->exams }}</td>
-											<td>{{ $percentage->created_at }}</td>
-											<td>{{ $percentage->updated_at }}</td>
+											<td>{{ $user->username }}</td>
+											<td>{{ $user->name }}</td>
+											<td>{{ $user->email }}</td>
+											<td>{{ $user->nif }}</td>
+											<td>{{ $user->surname }}</td>
+											<td>{{ $user->telephone }}</td>
+											<td>{{ $user->date_registered }}</td>
+											<td>{{ $user->created_at }}</td>
+											<td>{{ $user->updated_at }}</td>
 
                                             <td>
-
-                                                <form action="{{ route('admin.percentages.destroy',$percentage->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.percentages.show',$percentage->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.percentages.edit',$percentage->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.users.destroy',$user->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.users.show',$user->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.users.edit',$user->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -75,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $percentages->links() !!}
+                {!! $users->links() !!}
             </div>
         </div>
     </div>

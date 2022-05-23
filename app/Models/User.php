@@ -8,24 +8,49 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class User
+ *
+ * @property $id
+ * @property $username
+ * @property $name
+ * @property $email
+ * @property $nif
+ * @property $surname
+ * @property $telephone
+ * @property $date_registered
+ * @property $email_verified_at
+ * @property $password
+ * @property $remember_token
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'nif',
-        'surname',
-        'telephone',
-        'username',
+
+    static $rules = [
+		'username' => 'required',
+		'name' => 'required',
+		'email' => 'required',
+		'nif' => 'required',
+		'surname' => 'required',
+		'telephone' => 'required',
+		'date_registered' => 'required',
     ];
+
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['username','name','email','nif','surname','telephone','date_registered','created_at','updated_at'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,3 +71,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
+

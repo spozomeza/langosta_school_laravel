@@ -42,8 +42,10 @@ Route::prefix('user')->name('user.')->group(function(){
     Route::middleware(['auth:web','PreventBackHistory'])->group(function(){
         Route::view('/home','dashboard.user.home')->name('home');
         Route::view('/','dashboard.user.home')->name('home');
-        Route::post('/logout',[UserController::class,'logout'])->name('logout');
-        Route::get('/add-new',[UserController::class,'add'])->name('add');
+        Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+        Route::view('/edit','dashboard.user.edit')->name('edit');
+        Route::view('/update','dashboard.user.edit')->name('update');
+        Route::patch('update/{id}',[UserController::class,'update'])->name('update');
     });
 
 });
@@ -96,6 +98,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 
 
+        //Teachers
+        Route::resource('teachers', App\Http\Controllers\TeacherController::class);
+
+        //Users / Students
+        Route::resource('users', App\Http\Controllers\UserController::class);
     });
 
 });
