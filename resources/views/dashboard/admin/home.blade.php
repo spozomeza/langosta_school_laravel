@@ -11,7 +11,7 @@
                 <i class="bi bi-mortarboard-fill"></i> Alumnos
             </div>
         </a>
-        <a href="/teachers">
+        <a href="{{ route('admin.teachers.index') }}">
             <div class="menu-admin-opt p-4">
                 <i class="bi bi-briefcase-fill"></i> Profesores
             </div>
