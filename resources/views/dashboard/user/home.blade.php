@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
 </head>
-<body>
+<body> -->
+
+@extends('layouts.app')
+
+@section('content')
 
 <div class="container">
     <br />
@@ -144,8 +148,12 @@
 
 </script>
 
+
+@endsection
+
+<!-- 
 </body>
-</html>
+</html> -->
 
 
 
