@@ -5,51 +5,34 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+<!-- Inicio Body -->
+<div class="container text-center">
+    <h1 class="mb-5 mt-5">Alumnos</h1>
+<!-- El contenido va aqui -->
 
-                            <span id="card_title">
-                                {{ __('User') }}
-                            </span>
+<div class="d-flex justify-content-end mb-3">
+<a href="">
+    <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nuevo alumno</div>
+</a>
+</div>
 
-                             <div class="float-right">
-                                <a href="{{ route('admin.users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+<!--tabla con los contenidos a mostrar-->
+    <table id="tabla" class="table text-center">
+        <thead class="thead-light">
+            <tr>
+                <th style="border-top-left-radius:10px;">ID Alumno</th>
+                <th>Username</th>
+                <th>E-mail</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>NIF</th>
+                <th>Fecha de inscripción</th>
+                <th style="border-top-right-radius:10px;"> Acciones</th>
+            </tr>
+        </thead>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-
-										<th>Username</th>
-										<th>Name</th>
-										<th>Email</th>
-										<th>Nif</th>
-										<th>Surname</th>
-										<th>Telephone</th>
-										<th>Date Registered</th>
-										<th>Created At</th>
-										<th>Updated At</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+        <tbody>
                                     @foreach ($users as $user)
                                         <tr>
                                             <td>{{ ++$i }}</td>
@@ -61,27 +44,38 @@
 											<td>{{ $user->surname }}</td>
 											<td>{{ $user->telephone }}</td>
 											<td>{{ $user->date_registered }}</td>
-											<td>{{ $user->created_at }}</td>
-											<td>{{ $user->updated_at }}</td>
-
                                             <td>
                                                 <form action="{{ route('admin.users.destroy',$user->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.users.show',$user->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.users.edit',$user->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a href="{{ route('admin.users.edit',$user->id) }}"><i class="bi bi-pencil-square icono mr-1"></i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" value="submit" style="background-color:transparent;"><i class="bi bi-trash3-fill icono ml-1"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                {!! $users->links() !!}
-            </div>
-        </div>
-    </div>
+        
+        <tfooter class="thead-light">
+        <tr>
+                <th style="border-bottom-left-radius:10px;">ID Alumno</th>
+                <th>Username</th>
+                <th>E-mail</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>NIF</th>
+                <th>Fecha de inscripción</th>
+                <th style="border-bottom-right-radius:10px;"> Acciones</th>
+            </tr>
+        </tfooter>        
+    </table>
+
+<!-- FIN tabla con los contenidos a mostrar-->
+
+</div>
+
+
+
+
 @endsection

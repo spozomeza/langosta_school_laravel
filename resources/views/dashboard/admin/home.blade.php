@@ -6,12 +6,12 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
         <div class="grid-card">
-        <a href="">
+        <a href="{{ route('admin.users.index') }}">
             <div class="menu-admin-opt p-4">
                 <i class="bi bi-mortarboard-fill"></i> Alumnos
             </div>
         </a>
-        <a href="/teachers">
+        <a href="{{ route('admin.teachers.index') }}">
             <div class="menu-admin-opt p-4">
                 <i class="bi bi-briefcase-fill"></i> Profesores
             </div>
