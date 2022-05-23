@@ -12,6 +12,17 @@ class Teacher extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+    static $rules = [
+
+        'name' => 'required',
+        'email' => 'required',
+        'nif' => 'required',
+        'surname' => 'required',
+        'telephone' => 'required',
+        'date_registered' => 'required',
+        'password' => 'required',
+    ];
     /**
      * The attributes that are mass assignable.
      *
