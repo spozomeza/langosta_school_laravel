@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Percentage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class PercentageController
@@ -19,6 +20,7 @@ class PercentageController extends Controller
     public function index()
     {
         $percentages = Percentage::paginate();
+
 
         return view('percentage.index', compact('percentages'))
             ->with('i', (request()->input('page', 1) - 1) * $percentages->perPage());

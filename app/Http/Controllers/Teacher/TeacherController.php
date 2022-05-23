@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
+
+
     function create(Request $request){
         //Validate Inputs
         $request->validate([

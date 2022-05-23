@@ -11,6 +11,21 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        /* Current Login User Details */
+        $user = Auth::user();
+        var_dump($user);
+
+        /* Current Login User ID */
+        $userID = Auth::user()->id;
+        var_dump($userID);
+
+
+    }
+
+
     function create(Request $request){
         //Validate Inputs
         $request->validate([
@@ -28,11 +43,6 @@ class UserController extends Controller
         $user->username = $request->username;
         $user->surname = $request -> surname;
         $user->telephone = $request -> telephone;
-
-
-
-
-
 
         $save = $user->save();
 
@@ -64,4 +74,54 @@ class UserController extends Controller
         Auth::guard('web')->logout();
         return redirect('/');
     }
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        return view('user.show', compact('user'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $user = User::find($id);
+
+        return view('user.edit', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  User $user
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, User $user)
+    {
+        request()->validate(User::$rules);
+
+        $user->update($request->all());
+
+        return redirect()->route('user.home')
+            ->with('success', 'User updated successfully');
+    }
+
+    /**
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id)->delete();
+
+        return redirect()->route('user.index')
+            ->with('success', 'User deleted successfully');
+    }
+
 }
