@@ -5,27 +5,13 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="">
-            <div class="col-md-12">
-
-                @includeif('partials.errors')
-
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Update Course</span>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('admin.courses.update', $course->id) }}"  role="form" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            @csrf
-
-                            @include('course.form')
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="container text-center">
+    @includeif('partials.errors')
+    <h1 class="mb-5 mt-5">Editar curso</h1>
+    <form method="POST" action="{{ route('admin.courses.update', $course->id) }}" role="form" enctype="multipart/form-data">
+    {{ method_field('PATCH') }}
+        @csrf
+        @include('course.form')
+    </form>
+</section>
 @endsection
