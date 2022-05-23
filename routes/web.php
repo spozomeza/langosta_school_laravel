@@ -87,9 +87,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
         //Schedules
         Route::resource('schedules', App\Http\Controllers\ScheduleController::class);
 
-        //Exams
-        Route::resource('exams', App\Http\Controllers\ExamController::class);
-
         //Notifications
         Route::resource('notifications', App\Http\Controllers\NotificationController::class);
 
@@ -99,8 +96,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         //Perceages
         Route::resource('percentages', App\Http\Controllers\PercentageController::class);
 
-        //Works
-        Route::resource('works', App\Http\Controllers\WorkController::class);
+
 
         //Teachers
         Route::resource('teachers', App\Http\Controllers\TeacherController::class);
@@ -117,6 +113,7 @@ Route::prefix('teacher')->name('teacher.')->group(function() {
         Route::view('/', 'dashboard.teacher.login')->name('login');
         Route::view('/login', 'dashboard.teacher.login')->name('login');
         Route::post('/check', [TeacherController::class, 'check'])->name('check');
+        
 
     });
 
@@ -124,5 +121,9 @@ Route::prefix('teacher')->name('teacher.')->group(function() {
         Route::view('/', 'dashboard.teacher.home')->name('home');
         Route::view('/home', 'dashboard.teacher.home')->name('home');
         Route::post('logout', [TeacherController::class, 'logout'])->name('logout');
+        //Works
+        Route::resource('works', App\Http\Controllers\WorkController::class);
+        //Exams
+        Route::resource('exams', App\Http\Controllers\ExamController::class);
     });
 });

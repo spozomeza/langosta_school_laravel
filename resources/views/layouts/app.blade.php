@@ -23,16 +23,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />   
     <!-- Hoja de estilos css  -->
     <link href="{{ asset('css\styles.css') }}" rel="stylesheet">
+    <!-- Calendar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+
 
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg nav-langosta">  
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                 
+                 @guest<a class="navbar-brand" href="/">@endguest
+                 @auth('admin')<a class="navbar-brand" href="{{ route('admin.home') }}">@endauth
+                 @auth('teacher')<a class="navbar-brand" href="{{ route('teacher.home') }}">@endauth
+                 @auth('web')<a class="navbar-brand" href="{{ route('user.home') }}">@endauth
                     <img src="{{ asset('img\logo_langosta.png') }}" alt="" width="35" height="35" class="d-inline-block align-text-top">
                     Langosta.School
                 </a>
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -46,25 +58,64 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @guest
-
-                        @else
+                        @auth('admin')
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-eye-fill"></i> Vistas
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/admin"><i class="bi bi-house"></i> Inicio</a></li>
-                                    <li><a class="dropdown-item" href="/students"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
-                                    <li><a class="dropdown-item" href="/teachers"><i class="bi bi-briefcase-fill"></i> Profesores</a></li>
-                                    <li><a class="dropdown-item" href="/courses"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
-                                    <li><a class="dropdown-item" href="/enrollments"><i class="bi bi-journal-text"></i> Matrículas</a></li>
-                                    <li><a class="dropdown-item" href="/schedules"><i class="bi bi-alarm-fill"></i> Horarios</a></li>
-                                    <li><a class="dropdown-item" href="/classes"><i class="bi bi-easel"></i> Clases</a></li>                            
+                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-house"></i> Inicio</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-briefcase-fill"></i> Profesores</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.courses.index') }}"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.enrollments.index') }}"><i class="bi bi-journal-text"></i> Matrículas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.schedules.index') }}"><i class="bi bi-alarm-fill"></i> Horarios</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.clases.index') }}"><i class="bi bi-easel"></i> Clases</a></li>                            
+                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-easel"></i> Trabajos</a></li>                            
+                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-easel"></i> Examenes</a></li>                            
                                 </ul>
                             </li>
+                        @endauth
+
+                        @auth('teacher')
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-eye-fill"></i> Vistas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-house"></i> Inicio</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Asignaturas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Trabajos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Examenes</a></li>
+
+                                                               
+                                </ul>
+                            </li>
+                        @endauth
+
+                        @auth('web')
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-eye-fill"></i> Vistas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-house"></i> Inicio / Calendario</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-mortarboard-fill"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-briefcase-fill"></i> Asignaturas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-briefcase-fill"></i> Trabajos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-briefcase-fill"></i> Examenes</a></li>
+
+                                                               
+                                </ul>
+                            </li>
+                        @endauth
+
+                        @auth
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="bi bi-person-fill"></i>    
                                     {{ Auth::user()->name }}
                                     
                                 </a>
@@ -87,7 +138,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        @endauth
                     </ul>
                 </div>
             </div>

@@ -14,7 +14,7 @@
                             <span class="card-title">Show Exam</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('admin.exams.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('teacher.exams.index') }}"> Back</a>
                         </div>
                     </div>
 

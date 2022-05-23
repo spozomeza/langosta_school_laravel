@@ -16,7 +16,7 @@
                         <span class="card-title">Create Exam</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.exams.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('teacher.exams.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('exam.form')
