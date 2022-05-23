@@ -11,7 +11,7 @@
     <!-- El contenido va aqui -->
     <div class="d-flex justify-content-end mb-3">
         <a href="{{ route('admin.teachers.create') }}">
-            <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nueva matrícula</div>
+            <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nuevo profesor</div>
         </a>
     </div>
     @if ($message = Session::get('success'))
