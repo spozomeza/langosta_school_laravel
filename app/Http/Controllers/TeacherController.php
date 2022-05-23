@@ -47,7 +47,7 @@ class TeacherController extends Controller
 
         $teacher = Teacher::create($request->all());
 
-        return redirect()->route('teachers.index')
+        return redirect()->route('admin.teachers.index')
             ->with('success', 'Teacher created successfully.');
     }
 
@@ -90,7 +90,7 @@ class TeacherController extends Controller
 
         $teacher->update($request->all());
 
-        return redirect()->route('teachers.index')
+        return redirect()->route('admin.teachers.index')
             ->with('success', 'Teacher updated successfully');
     }
 
@@ -103,7 +103,7 @@ class TeacherController extends Controller
     {
         $teacher = Teacher::find($id)->delete();
 
-        return redirect()->route('teachers.index')
+        return redirect()->route('admin.teachers.index')
             ->with('success', 'Teacher deleted successfully');
     }
 }
