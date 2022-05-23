@@ -5,75 +5,68 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Enrollment') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('admin.enrollments.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-
-										<th>Id Student</th>
-										<th>Id Course</th>
-										<th>Status</th>
-										<th>Created At</th>
-										<th>Updated At</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($enrollments as $enrollment)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-
-											<td>{{ $enrollment->id_student }}</td>
-											<td>{{ $enrollment->id_course }}</td>
-											<td>{{ $enrollment->status }}</td>
-											<td>{{ $enrollment->created_at }}</td>
-											<td>{{ $enrollment->updated_at }}</td>
-
-                                            <td>
-                                                <form action="{{ route('admin.enrollments.destroy',$enrollment->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.enrollments.show',$enrollment->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.enrollments.edit',$enrollment->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                {!! $enrollments->links() !!}
-            </div>
+<!-- Inicio Body -->
+<div class="container text-center">
+    <h1 class="mb-5 mt-5">Matrículas</h1>
+    <!-- El contenido va aqui -->
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('admin.enrollments.create') }}">
+            <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nueva matrícula</div>
+        </a>
+    </div>       
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
         </div>
-    </div>
+    @endif
+
+    <!--tabla con los contenidos a mostrar-->
+    <table id="tabla" class="table text-center">
+        <thead class="thead-light">
+            <tr>
+                <th style="border-top-left-radius:10px;">ID</th>
+                <th>Id Student</th>
+                <th>Id Course</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th style="border-top-right-radius:10px;">Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach ($enrollments as $enrollment)
+            <tr>
+                <td>{{ ++$i }}</td>
+                <td>{{ $enrollment->id_student }}</td>
+                <td>{{ $enrollment->id_course }}</td>
+                <td>{{ $enrollment->status }}</td>
+                <td>{{ $enrollment->created_at }}</td>
+                <td>{{ $enrollment->updated_at }}</td>
+                <td class="d-flex justify-content-center">
+                    <form action="{{ route('admin.enrollments.destroy',$enrollment->id) }}" method="POST">
+                        <a href="{{ route('admin.enrollments.show',$enrollment->id) }}"><i class="bi bi-eye-fill icono mr-1"></i></a>
+                        <a href="{{ route('admin.enrollments.edit',$enrollment->id) }}"><i class="bi bi-pencil-square icono mr-1"></i></a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" style="background-color:transparent;"><i class="bi bi-trash3-fill icono ml-1"></i></button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+
+        <tfooter class="thead-light">
+            <tr>
+                <th style="border-bottom-left-radius:10px;">ID</th>
+                <th>Id Student</th>
+                <th>Id Course</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th style="border-bottom-right-radius:10px;">Acciones</th>
+            </tr>
+        </tfooter>
+    </table>
+</div>
 @endsection

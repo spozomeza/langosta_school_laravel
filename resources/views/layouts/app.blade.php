@@ -67,10 +67,10 @@
                                     <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-house"></i> Inicio</a></li>
                                     <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
                                     <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-briefcase-fill"></i> Profesores</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-journal-text"></i> Matrículas</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-alarm-fill"></i> Horarios</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-easel"></i> Clases</a></li>                            
+                                    <li><a class="dropdown-item" href="{{ route('admin.courses.index') }}"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.enrollments.index') }}"><i class="bi bi-journal-text"></i> Matrículas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.schedules.index') }}"><i class="bi bi-alarm-fill"></i> Horarios</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.clases.index') }}"><i class="bi bi-easel"></i> Clases</a></li>                            
                                     <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-easel"></i> Trabajos</a></li>                            
                                     <li><a class="dropdown-item" href="{{ route('admin.home') }}"><i class="bi bi-easel"></i> Examenes</a></li>                            
                                 </ul>
