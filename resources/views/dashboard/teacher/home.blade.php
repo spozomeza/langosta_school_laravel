@@ -22,12 +22,12 @@
                         <i class="bi bi-journal-bookmark-fill"></i> Trabajos
                     </div>
                 </a>  
-                <a href="{{ route('admin.courses.index') }}">
+                <a href="{{ route('teacher.exams.index') }}">
                     <div class="menu-admin-opt p-4">
                         <i class="bi bi-ui-checks"></i> Exámenes
                     </div>
                 </a>  
-                <a href="{{ route('admin.users.index') }}">
+                <a href="{{ route('teacher.users.index') }}">
                     <div class="menu-admin-opt p-4">
                         <i class="bi bi-mortarboard-fill"></i> Alumnos
                     </div>
