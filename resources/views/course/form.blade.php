@@ -1,7 +1,6 @@
 <div class="row justify-content-center">
     <div class="col-md-4 col-sm-12">
         <div class="form-group">
-
             <div class="mb-2">
                 <div class="d-flex mb-2">
                     <label for="id_course">Nombre del curso</label>
@@ -46,7 +45,7 @@
         </div>
 
         <div class="form-group mt-5">
-            <button class="nuevo-registro form-control" type="submit" value="submit">Crear curso</button>
+            <button class="nuevo-registro form-control" type="submit" value="submit">Guardar</button>
         </div>
         <div class="form-group">
             <div class="btn form-control">
