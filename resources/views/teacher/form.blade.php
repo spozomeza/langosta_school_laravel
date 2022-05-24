@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-md-4 col-sm-12">
+        
         <div class="form-group">
-
             <div class="mb-2">
                 <div class="d-flex mb-2">
                     <label for="name">Nombre del profesor</label>
@@ -60,12 +60,12 @@
         </div>
 
         <div class="form-group mt-5">
-            <button class="nuevo-registro form-control" type="submit" value="submit">Crear profesor</button>
+            <button class="nuevo-registro form-control" type="submit" value="submit">Guardar</button>
         </div>
 
         <div class="form-group mb-5">
             <div class="btn form-control">
-                <a class="link-sesion" href="{{ route('admin.courses.index') }}"> Cancelar</a>
+                <a class="link-sesion" href="{{ route('admin.teachers.index') }}"> Cancelar</a>
             </div>
         </div>
     </div>
