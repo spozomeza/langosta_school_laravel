@@ -83,10 +83,10 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-house"></i> Inicio</a></li>
                                     <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Cursos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Asignaturas</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Trabajos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-briefcase-fill"></i> Examenes</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-book"></i> Asignaturas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-journal-bookmark-fill"></i> Trabajos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-ui-checks"></i> Examenes</a></li>
 
                                                                
                                 </ul>
@@ -100,10 +100,10 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-house"></i> Inicio / Calendario</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-mortarboard-fill"></i> Cursos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-briefcase-fill"></i> Asignaturas</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-briefcase-fill"></i> Trabajos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-briefcase-fill"></i> Examenes</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-book"></i> Asignaturas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-journal-bookmark-fill"></i> Trabajos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-ui-checks"></i> Examenes</a></li>
 
                                                                
                                 </ul>
