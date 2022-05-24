@@ -6,7 +6,7 @@
                 <div class="d-flex mb-2">
                     <label for="id_student">ID Estudiante</label>
                 </div>
-                {{ Form::number('id_student', $enrollment->id_student, ['class' => 'form-control' . ($errors->has('id_student') ? ' is-invalid' : ''), 'placeholder' => 'Id Student']) }}
+                {{ Form::number('id_student', $enrollment->id_student, ['class' => 'form-control' . ($errors->has('id_student') ? ' is-invalid' : ''), 'placeholder' => 'Id Estudiante']) }}
                 {!! $errors->first('id_student', '<div class="invalid-feedback">:message</div>') !!}
             </div>
         </div>
@@ -15,7 +15,7 @@
             <div class="d-flex mb-2">
                 <label for="id_course">ID Curso</label>
             </div>
-            {{ Form::number('id_course', $enrollment->id_course, ['class' => 'form-control' . ($errors->has('id_course') ? ' is-invalid' : ''), 'placeholder' => 'Id Course']) }}
+            {{ Form::number('id_course', $enrollment->id_course, ['class' => 'form-control' . ($errors->has('id_course') ? ' is-invalid' : ''), 'placeholder' => 'Id Curso']) }}
             {!! $errors->first('id_course', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
@@ -23,7 +23,7 @@
             <div class="d-flex mb-2">
                 <label for="status">Estado</label>
             </div>
-            {{ Form::number('status', $enrollment->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Status']) }}
+            {{ Form::number('status', $enrollment->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
             {!! $errors->first('status', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

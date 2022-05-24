@@ -6,7 +6,7 @@
                 <div class="d-flex mb-2">
                     <label for="id_teacher">ID profesor</label>
                 </div>
-                {{ Form::number('id_teacher', $clase->id_teacher, ['class' => 'form-control' . ($errors->has('id_teacher') ? ' is-invalid' : ''), 'placeholder' => 'Id Teacher']) }}
+                {{ Form::number('id_teacher', $clase->id_teacher, ['class' => 'form-control' . ($errors->has('id_teacher') ? ' is-invalid' : ''), 'placeholder' => 'Id profesor']) }}
                 {!! $errors->first('id_teacher', '<div class="invalid-feedback">:message</div>') !!}
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="d-flex mb-2">
                 <label for="id_course">ID Curso</label>
             </div>
-            {{ Form::number('id_course', $clase->id_course, ['class' => 'form-control' . ($errors->has('id_course') ? ' is-invalid' : ''), 'placeholder' => 'Id Course']) }}
+            {{ Form::number('id_course', $clase->id_course, ['class' => 'form-control' . ($errors->has('id_course') ? ' is-invalid' : ''), 'placeholder' => 'Id Curso']) }}
             {!! $errors->first('id_course', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
@@ -25,7 +25,7 @@
             <div class="d-flex mb-2">
                 <label for="id_schedule">ID Horario</label>
             </div>
-            {{ Form::number('id_schedule', $clase->id_schedule, ['class' => 'form-control' . ($errors->has('id_schedule') ? ' is-invalid' : ''), 'placeholder' => 'Id Schedule']) }}
+            {{ Form::number('id_schedule', $clase->id_schedule, ['class' => 'form-control' . ($errors->has('id_schedule') ? ' is-invalid' : ''), 'placeholder' => 'Id Horario']) }}
             {!! $errors->first('id_schedule', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
@@ -34,7 +34,7 @@
             <div class="d-flex mb-2">
                 <label for="name">Nombre</label>
             </div>
-            {{ Form::text('name', $clase->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
+            {{ Form::text('name', $clase->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
