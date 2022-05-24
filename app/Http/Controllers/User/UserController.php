@@ -47,7 +47,8 @@ class UserController extends Controller
         $save = $user->save();
 
         if( $save ){
-            return redirect()->back()->with('success','You are now registered successfully');
+            return redirect()->route('admin.users.index')
+            ->with('success', 'User created successfully.');
         }else{
             return redirect()->back()->with('fail','Something went wrong, failed to register');
         }
