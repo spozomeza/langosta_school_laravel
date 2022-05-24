@@ -25,11 +25,9 @@
         <thead class="thead-light">
             <tr>
                 <th style="border-top-left-radius:10px;">ID</th>
-                <th>Id Student</th>
-                <th>Id Course</th>
-                <th>Status</th>
-                <th>Created At</th>
-                <th>Updated At</th>
+                <th>Id Estudiante</th>
+                <th>Id Curso</th>
+                <th>Estado</th>
                 <th style="border-top-right-radius:10px;">Acciones</th>
             </tr>
         </thead>
@@ -41,8 +39,6 @@
                 <td>{{ $enrollment->id_student }}</td>
                 <td>{{ $enrollment->id_course }}</td>
                 <td>{{ $enrollment->status }}</td>
-                <td>{{ $enrollment->created_at }}</td>
-                <td>{{ $enrollment->updated_at }}</td>
                 <td class="d-flex justify-content-center">
                     <form action="{{ route('admin.enrollments.destroy',$enrollment->id) }}" method="POST">
                         <a href="{{ route('admin.enrollments.show',$enrollment->id) }}"><i class="bi bi-eye-fill icono mr-1"></i></a>
@@ -59,11 +55,9 @@
         <tfooter class="thead-light">
             <tr>
                 <th style="border-bottom-left-radius:10px;">ID</th>
-                <th>Id Student</th>
-                <th>Id Course</th>
-                <th>Status</th>
-                <th>Created At</th>
-                <th>Updated At</th>
+                <th>Id Estudiante</th>
+                <th>Id Curso</th>
+                <th>Estado</th>
                 <th style="border-bottom-right-radius:10px;">Acciones</th>
             </tr>
         </tfooter>

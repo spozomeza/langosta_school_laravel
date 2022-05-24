@@ -25,14 +25,12 @@
         <thead class="thead-light">
             <tr>
                 <th style="border-top-left-radius:10px;">ID</th>
-                    <th>Name</th>
+                    <th>Nombre</th>
                     <th>Email</th>
-                    <th>Nif</th>
-                    <th>Surname</th>
-                    <th>Telephone</th>
-                    <th>Date Registered</th>
-                    <th>Created At</th>
-                    <th>Updated At</th>
+                    <th>NIF</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Fecha registro</th>
                     <th style="border-top-right-radius:10px;">Acciones</th>
                 </tr>
             </thead>
@@ -47,8 +45,6 @@
                         <td>{{ $teacher->surname }}</td>
                         <td>{{ $teacher->telephone }}</td>
                         <td>{{ $teacher->date_registered }}</td>
-                        <td>{{ $teacher->created_at }}</td>
-                        <td>{{ $teacher->updated_at }}</td>
                         <td class="d-flex justify-content-center">
                             <form action="{{ route('admin.teachers.destroy',$teacher->id) }}" method="POST">
                                 <a href="{{ route('admin.teachers.show',$teacher->id) }}"><i class="bi bi-eye-fill icono mr-1"></i></a>
@@ -65,14 +61,12 @@
             <tfooter class="thead-light">
             <tr>
                 <th style="border-bottom-left-radius:10px;">ID</th>
-                <th>Name</th>
+                <th>Nombre</th>
                 <th>Email</th>
-                <th>Nif</th>
-                <th>Surname</th>
-                <th>Telephone</th>
-                <th>Date Registered</th>
-                <th>Created At</th>
-                <th>Updated At</th>
+                <th>NIF</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>Fecha registro</th>
                 <th style="border-bottom-right-radius:10px;">Acciones</th>
             </tr>
         </tfooter>

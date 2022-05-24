@@ -26,13 +26,11 @@
         <thead class="thead-light">
             <tr>
                 <th style="border-top-left-radius:10px;">ID</th>
-                <th>Id Teacher</th>
-                <th>Id Course</th>
-                <th>Id Schedule</th>
-                <th>Name</th>
+                <th>Id Profesor</th>
+                <th>Id Curso</th>
+                <th>Id Horario</th>
+                <th>Nombre</th>
                 <th>Color</th>
-                <th>Created At</th>
-                <th>Updated At</th>
                 <th style="border-top-right-radius:10px;">Acciones</th>
             </tr>
         </thead>
@@ -46,8 +44,6 @@
                     <td>{{ $clase->id_schedule }}</td>
                     <td>{{ $clase->name }}</td>
                     <td>{{ $clase->color }}</td>
-                    <td>{{ $clase->created_at }}</td>
-                    <td>{{ $clase->updated_at }}</td>
                 <td class="d-flex justify-content-center">
                     <form action="{{ route('admin.clases.destroy',$clase->id) }}" method="POST">
                         <a href="{{ route('admin.clases.show',$clase->id) }}"><i class="bi bi-eye-fill icono mr-1"></i></a>
@@ -64,13 +60,11 @@
         <tfooter class="thead-light">
             <tr>
                 <th style="border-bottom-left-radius:10px;">ID</th>
-                <th>Id Teacher</th>
-                <th>Id Course</th>
-                <th>Id Schedule</th>
-                <th>Name</th>
+                <th>Id Profesor</th>
+                <th>Id Curso</th>
+                <th>Id Horario</th>
+                <th>Nombre</th>
                 <th>Color</th>
-                <th>Created At</th>
-                <th>Updated At</th>
                 <th style="border-bottom-right-radius:10px;">Acciones</th>
             </tr>
         </tfooter>

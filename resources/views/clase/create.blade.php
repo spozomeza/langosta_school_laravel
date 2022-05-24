@@ -1,30 +1,16 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Clase
+Crear Clase
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-
-                @includeif('partials.errors')
-
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Create Clase</span>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('admin.clases.store') }}"  role="form" enctype="multipart/form-data">
-                            @csrf
-
-                            @include('clase.form')
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="container text-center">
+    @includeif('partials.errors')
+    <h1 class="mb-5 mt-5">Nueva clase</h1>
+    <form method="POST" action="{{ route('admin.clases.store') }}" role="form" enctype="multipart/form-data">
+        @csrf
+        @include('clase.form')
+    </form>
+</section>
 @endsection
