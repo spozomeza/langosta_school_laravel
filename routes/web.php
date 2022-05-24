@@ -125,5 +125,7 @@ Route::prefix('teacher')->name('teacher.')->group(function() {
         Route::resource('works', App\Http\Controllers\WorkController::class);
         //Exams
         Route::resource('exams', App\Http\Controllers\ExamController::class);
+        //Courses
+        Route::resource('courses', App\Http\Controllers\CourseController::class);
     });
 });

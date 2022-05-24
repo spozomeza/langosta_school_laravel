@@ -47,7 +47,6 @@
                         <td>{{ $teacher->date_registered }}</td>
                         <td class="d-flex justify-content-center">
                             <form action="{{ route('admin.teachers.destroy',$teacher->id) }}" method="POST">
-                                <a href="{{ route('admin.teachers.show',$teacher->id) }}"><i class="bi bi-eye-fill icono mr-1"></i></a>
                                 <a href="{{ route('admin.teachers.edit',$teacher->id) }}"><i class="bi bi-pencil-square icono mr-1"></i></a>
                                 @csrf
                                 @method('DELETE')

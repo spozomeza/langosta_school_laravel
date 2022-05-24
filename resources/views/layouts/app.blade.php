@@ -118,7 +118,7 @@
                                     
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-file-person"></i> Mi perfil</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.edit',auth()->user()->id ) }}"><i class="bi bi-file-person"></i> Mi perfil</a></li>
                                     <li><a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
