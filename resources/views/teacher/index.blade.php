@@ -10,7 +10,7 @@
     <h1 class="mb-5 mt-5">Profesores</h1>
     <!-- El contenido va aqui -->
     <div class="d-flex justify-content-end mb-3">
-        <a href="{{ route('admin.teachers.create') }}">
+        <a href="{{ route('admin.teacher.register') }}">
             <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nuevo profesor</div>
         </a>
     </div>
