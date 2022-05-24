@@ -16,7 +16,7 @@
                         <span class="card-title">Create Work</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.works.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('teacher.works.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('work.form')

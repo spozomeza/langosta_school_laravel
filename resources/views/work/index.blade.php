@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('admin.works.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('teacher.works.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -59,9 +59,9 @@
 											<td>{{ $work->updated_at }}</td>
 
                                             <td>
-                                                <form action="{{ route('admin.works.destroy',$work->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.works.show',$work->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.works.edit',$work->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('teacher.works.destroy',$work->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('teacher.works.show',$work->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('teacher.works.edit',$work->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

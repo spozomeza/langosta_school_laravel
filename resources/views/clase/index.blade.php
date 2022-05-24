@@ -45,8 +45,7 @@
                     <td>{{ $clase->name }}</td>
                     <td>{{ $clase->color }}</td>
                 <td class="d-flex justify-content-center">
-                    <form action="{{ route('admin.clases.destroy',$clase->id) }}" method="POST">
-                        <a href="{{ route('admin.clases.show',$clase->id) }}"><i class="bi bi-eye-fill icono mr-1"></i></a>
+                    <form action="{{ route('admin.clases.destroy',$clase->id) }}" method="POST">                  
                         <a href="{{ route('admin.clases.edit',$clase->id) }}"><i class="bi bi-pencil-square icono mr-1"></i></a>
                         @csrf
                         @method('DELETE')
