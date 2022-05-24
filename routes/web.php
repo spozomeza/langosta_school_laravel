@@ -74,7 +74,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/teacher/check', [TeacherController::class, 'check'])->name('teacher.check');
 
         //Student
-        Route::view('/user/register','dashboard.user.register')->name('register');
+        Route::view('/user/register','dashboard.user.register')->name('user.register');
         Route::post('/user/create',[UserController::class,'create'])->name('user.create');
         Route::post('/user/check',[UserController::class,'check'])->name('user.check');
 

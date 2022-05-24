@@ -11,7 +11,7 @@ User
     <!-- El contenido va aqui -->
 
     <div class="d-flex justify-content-end mb-3">
-        <a href="{{ route('admin.users.create') }}">
+        <a href="{{ route('admin.user.register') }}">
             <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nuevo alumno</div>
         </a>
     </div>
