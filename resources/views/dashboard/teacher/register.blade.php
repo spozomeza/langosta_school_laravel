@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Teachers Register</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+@extends('layouts.app')
 
-</head>
-<body>
+@section('template_title')
+Nuevo profesor
+@endsection
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 offset-md-4" style="margin-top: 45px;">
-            <h4>Teachers Register</h4><hr>
+@section('content')
+
+<section class="container text-center">    
+        <h1 class="mb-5 mt-5">Nuevo profesor</h1>
+        <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-12">
             <form action="{{ route('admin.teacher.create') }}" method="post" autocomplete="off">
                 @if (Session::get('success'))
                     <div class="alert alert-success">
@@ -29,52 +24,66 @@
 
                 @csrf
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Enter full name" value="{{ old('name') }}">
+        <div class="d-flex mb-2">
+                <label for="name">Nombre</label>
+            </div>
+                    <input type="text" class="form-control" name="name" placeholder="Nombre del profesor" value="{{ old('name') }}">
                     <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-group">
-                    <label for="surname">Surname</label>
-                    <input type="text" class="form-control" name="surname" placeholder="Enter full surname" value="{{ old('surname') }}">
+        <div class="d-flex mb-2">
+                <label for="surname">Apellido</label>
+            </div>
+                    <input type="text" class="form-control" name="surname" placeholder="Apellido del profesor" value="{{ old('surname') }}">
                     <span class="text-danger">@error('surname'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-group">
-                    <label for="telephone">Telephone</label>
-                    <input type="text" class="form-control" name="telephone" placeholder="Enter full telephone" value="{{ old('telephone') }}">
+        <div class="d-flex mb-2">
+                <label for="telephone">Teléfono</label>
+            </div>
+                    <input type="text" class="form-control" name="telephone" placeholder="Teléfono del profesor" value="{{ old('telephone') }}">
                     <span class="text-danger">@error('telephone'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-group">
-                    <label for="nif">NIF</label>
-                    <input type="text" class="form-control" name="nif" placeholder="Enter full nif" value="{{ old('nif') }}">
+        <div class="d-flex mb-2">
+                <label for="nif">NIF</label>
+            </div>
+                    <input type="text" class="form-control" name="nif" placeholder="NIF del profesor" value="{{ old('nif') }}">
                     <span class="text-danger">@error('nif'){{ $message }} @enderror</span>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
+        <div class="d-flex mb-2">
+                <label for="email">Email</label>
+            </div>
+                    <input type="text" class="form-control" name="email" placeholder="E-mail del profesor" value="{{ old('email') }}">
                     <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
+        <div class="d-flex mb-2">
+                <label for="password">Contraseña</label>
+            </div>
+                    <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{ old('password') }}">
                     <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-group">
-                    <label for="cpassword">Confirm Password</label>
-                    <input type="password" class="form-control" name="cpassword" placeholder="Enter confirm password" value="{{ old('cpassword') }}">
+        <div class="d-flex mb-2">
+                <label for="cpassword">Confirmar contraseña</label>
+            </div>
+                    <input type="password" class="form-control" name="cpassword" placeholder="Confirmar contraseña" value="{{ old('cpassword') }}">
                     <span class="text-danger">@error('cpassword'){{ $message }} @enderror</span>
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </div>
-                <br>
+                <div class="form-group mt-5">
+            <button class="nuevo-registro form-control" type="submit" value="submit">Guardar</button>
+        </div>
+        <div class="form-group">
+            <div class="btn form-control">
+                <a class="link-sesion" href="{{ route('admin.teachers.index') }}"> Cancelar</a>
+            </div>
+        </div>
 
             </form>
         </div>
+        </div>
     </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-</body>
-</html>
+@endsection

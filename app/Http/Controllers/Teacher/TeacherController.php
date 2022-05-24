@@ -32,7 +32,7 @@ class TeacherController extends Controller
         $save = $user->save();
 
         if( $save ){
-            return redirect()->route('admin.teacher.index')
+            return redirect()->route('admin.teachers.index')
             ->with('success', 'User created successfully.');
         }else{
             return redirect()->back()->with('fail','Something went wrong, failed to register');

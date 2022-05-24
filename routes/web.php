@@ -69,7 +69,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/logout',[UserAdminController::class,'logout'])->name('logout');
 
         //Teacher
-        Route::view('/teacher/register', 'dashboard.teacher.register')->name('register');
+        Route::view('/teacher/register', 'dashboard.teacher.register')->name('teacher.register');
         Route::post('/teacher/create', [TeacherController::class, 'create'])->name('teacher.create');
         Route::post('/teacher/check', [TeacherController::class, 'check'])->name('teacher.check');
 

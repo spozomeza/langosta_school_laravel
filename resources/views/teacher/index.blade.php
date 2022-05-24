@@ -10,7 +10,7 @@
     <h1 class="mb-5 mt-5">Profesores</h1>
     <!-- El contenido va aqui -->
     <div class="d-flex justify-content-end mb-3">
-        <a href="{{ route('admin.teachers.create') }}">
+        <a href="{{ route('admin.teacher.register') }}">
             <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nuevo profesor</div>
         </a>
     </div>
@@ -47,7 +47,6 @@
                         <td>{{ $teacher->date_registered }}</td>
                         <td class="d-flex justify-content-center">
                             <form action="{{ route('admin.teachers.destroy',$teacher->id) }}" method="POST">
-                                <a href="{{ route('admin.teachers.show',$teacher->id) }}"><i class="bi bi-eye-fill icono mr-1"></i></a>
                                 <a href="{{ route('admin.teachers.edit',$teacher->id) }}"><i class="bi bi-pencil-square icono mr-1"></i></a>
                                 @csrf
                                 @method('DELETE')
