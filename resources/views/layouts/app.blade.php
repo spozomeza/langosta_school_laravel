@@ -81,12 +81,12 @@
                                     <i class="bi bi-eye-fill"></i> Vistas
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-house"></i> Inicio</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.home') }}"><i class="bi bi-house"></i> Inicio</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.users.index') }}"><i class="bi bi-mortarboard-fill"></i> Alumnos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.courses.index') }}"><i class="bi bi-clipboard-check"></i> Cursos</a></li>
                                     <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-book"></i> Asignaturas</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-journal-bookmark-fill"></i> Trabajos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('user.home') }}"><i class="bi bi-ui-checks"></i> Examenes</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.works.index') }}"><i class="bi bi-journal-bookmark-fill"></i> Trabajos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('teacher.exams.index') }}"><i class="bi bi-ui-checks"></i> Examenes</a></li>
 
                                                                
                                 </ul>

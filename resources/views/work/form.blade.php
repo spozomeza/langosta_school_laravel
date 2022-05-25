@@ -1,29 +1,49 @@
-<div class="box box-info padding-1">
-    <div class="box-body">
+<div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12">
 
-        <div class="form-group">
-            {{ Form::label('id_class') }}
-            {{ Form::number('id_class', $work->id_class, ['class' => 'form-control' . ($errors->has('id_class') ? ' is-invalid' : ''), 'placeholder' => 'Id Class']) }}
+    <div class="form-group">
+            <div class="mb-2">
+                <div class="d-flex mb-2">
+                    <label for="id_class">ID Clase</label>
+                </div>
+            {{ Form::number('id_class', $work->id_class, ['class' => 'form-control' . ($errors->has('id_class') ? ' is-invalid' : ''), 'placeholder' => 'Id Clase']) }}
             {!! $errors->first('id_class', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
         <div class="form-group">
-            {{ Form::label('id_student') }}
-            {{ Form::number('id_student', $work->id_student, ['class' => 'form-control' . ($errors->has('id_student') ? ' is-invalid' : ''), 'placeholder' => 'Id Student']) }}
+            <div class="d-flex mb-2">
+                <label for="id_student">ID Estudiante</label>
+            </div>
+            {{ Form::number('id_student', $work->id_student, ['class' => 'form-control' . ($errors->has('id_student') ? ' is-invalid' : ''), 'placeholder' => 'Id Estudiante']) }}
             {!! $errors->first('id_student', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
         <div class="form-group">
-            {{ Form::label('name') }}
-            {{ Form::text('name', $work->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
+            <div class="d-flex mb-2">
+                <label for="name">Nombre</label>
+            </div>
+            {{ Form::text('name', $work->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
         <div class="form-group">
-            {{ Form::label('mark') }}
-            {{ Form::number('mark', $work->mark, ['class' => 'form-control', 'step'=>'any' . ($errors->has('mark') ? ' is-invalid' : ''), 'placeholder' => 'Mark']) }}
+            <div class="d-flex mb-2">
+                <label for="mark">Nota</label>
+            </div>
+            {{ Form::number('mark', $work->mark, ['class' => 'form-control', 'step'=>'any' . ($errors->has('mark') ? ' is-invalid' : ''), 'placeholder' => 'Nota']) }}
             {!! $errors->first('mark', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
-    </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+        <div class="form-group mt-5">
+            <button class="nuevo-registro form-control" type="submit" value="submit">Guardar</button>
+        </div>
+
+        <div class="form-group mb-5">
+            <div class="btn form-control">
+                <a class="link-sesion" href="{{ route('teacher.works.index') }}"> Cancelar</a>
+            </div>
+        </div>
     </div>
 </div>

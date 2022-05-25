@@ -29,11 +29,9 @@
 
 
 
-
         <div class="form-group mt-5">
             <button class="nuevo-registro form-control" type="submit" value="submit">Guardar</button>
         </div>
-
 
         <div class="form-group mb-5">
             <div class="btn form-control">

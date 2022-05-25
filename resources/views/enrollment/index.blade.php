@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Enrollment
+Matrículas
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
         <a href="{{ route('admin.enrollments.create') }}">
             <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nueva matrícula</div>
         </a>
-    </div>       
+    </div>
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
     @endif
 
     <!--tabla con los contenidos a mostrar-->

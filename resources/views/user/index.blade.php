@@ -9,13 +9,13 @@ User
 <div class="container text-center">
     <h1 class="mb-5 mt-5">Alumnos</h1>
     <!-- El contenido va aqui -->
-
+    @auth('admin')
     <div class="d-flex justify-content-end mb-3">
         <a href="{{ route('admin.user.register') }}">
             <div class="nuevo-registro"><i class="bi bi-plus-circle"></i> Nuevo alumno</div>
         </a>
     </div>
-
+    @endauth
     <!--tabla con los contenidos a mostrar-->
     <table id="tabla" class="table text-center">
         <thead class="thead-light">
@@ -27,8 +27,9 @@ User
                 <th>Apellido</th>                
                 <th>NIF</th>
                 <th>Teléfono</th>
-                <th>Fecha de Matrícula</th>
-                <th style="border-top-right-radius:10px;"> Acciones</th>
+                @auth('teacher')<th style="border-top-right-radius:10px;">Fecha de Matrícula</th>@endauth
+                @auth('admin')<th>Fecha de Matrícula</th>@endauth
+                @auth('admin')<th style="border-top-right-radius:10px;"> Acciones</th>@endauth
             </tr>
         </thead>
 
@@ -44,14 +45,14 @@ User
                 <td>{{ $user->nif }}</td>                
                 <td>{{ $user->telephone }}</td>
                 <td>{{ $user->date_registered }}</td>
-                <td>
+                @auth('admin')<td>
                     <form action="{{ route('admin.users.destroy',$user->id) }}" method="POST">
                         <a href="{{ route('admin.users.edit',$user->id) }}"><i class="bi bi-pencil-square icono mr-1"></i></a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" value="submit" style="background-color:transparent;"><i class="bi bi-trash3-fill icono ml-1"></i></button>
                     </form>
-                </td>
+                </td>@endauth
             </tr>
             @endforeach
         </tbody>
@@ -65,8 +66,9 @@ User
                 <th>Apellido</th>                
                 <th>NIF</th>
                 <th>Teléfono</th>
-                <th>Fecha de Matrícula</th>
-                <th style="border-bottom-right-radius:10px;"> Acciones</th>
+                @auth('teacher')<th style="border-bottom-right-radius:10px;">Fecha de Matrícula</th>@endauth
+                @auth('admin')<th>Fecha de Matrícula</th>@endauth
+                @auth('admin')<th style="border-bottom-right-radius:10px;"> Acciones</th>@endauth
             </tr>
         </tfooter>
     </table>
