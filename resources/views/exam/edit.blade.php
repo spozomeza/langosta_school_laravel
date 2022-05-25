@@ -1,31 +1,16 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Update Exam
+Editar Examen
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="">
-            <div class="col-md-12">
-
-                @includeif('partials.errors')
-
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Update Exam</span>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('teacher.exams.update', $exam->id) }}"  role="form" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            @csrf
-
-                            @include('exam.form')
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="container text-center">
+    @includeif('partials.errors')
+    <h1 class="mb-5 mt-5">Editar examen</h1>
+    <form method="POST" action="{{ route('teacher.exams.update', $exam->id) }}" role="form" enctype="multipart/form-data">
+        @csrf
+        @include('exam.form')
+    </form>
+</section>
 @endsection
